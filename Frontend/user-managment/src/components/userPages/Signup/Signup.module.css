@@ -1,0 +1,116 @@
+.main{
+
+    background-color: #008695;
+    height: 100vh;
+    
+}
+
+/* Signup Form */
+.signupForm,
+.signupForm * {
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.signupForm {
+    max-width: 350px;
+    margin: 0 auto;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    left: 38%;
+    top: 180px;
+    
+}
+
+/* Logo Container */
+.logoContainer {
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+/* Logo */
+.logo {
+    display: block;
+    max-width: 125px;
+    margin: 0 auto;
+}
+
+/* Form Content */
+.signupContent {
+    padding: 30px;
+    background: bisque;
+}
+
+/* Header */
+.signupHeader {
+    margin-bottom: 15px;
+    text-align: center;
+    color: #333333;
+    font-size: large;
+    font-weight: 900;
+}
+
+/* Input Fields */
+.signupInput {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #dddddd;
+    background: #ffffff;
+    outline: none;
+    transition: border-color 0.5s;
+}
+
+.signupInput:focus {
+    border-color: #009578;
+}
+
+.signupInput::placeholder {
+    color: #aaaaaa;
+}
+
+/* Submit Button */
+.signupButton {
+    padding: 10px;
+    color: #ffffff;
+    font-weight: bold;
+    background: #008695;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signupButton:active {
+    background: #008067;
+}
+
+.signupButton:hover {
+    background: #7dd2db;
+}
+
+/* Links Section */
+.signupLinks {
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* Signup Links */
+.signupLink {
+    font-size: 0.9em;
+    color: #008067;
+    text-decoration: none;
+}
+
+/* Error Message */
+.errorMsg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: red;
+    font-size: 14px;
+}

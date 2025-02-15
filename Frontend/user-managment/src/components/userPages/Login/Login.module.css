@@ -1,0 +1,116 @@
+section{
+    background-color: #008695;
+    height: 100vh;
+}
+
+/* General Login Form Styling */
+.loginForm,
+.loginForm * {
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro';
+    
+}
+
+.loginForm {
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    left: 38%;
+    top: 180px;
+    
+}
+
+/* Logo Container */
+
+
+/* Logo */
+.logo {
+    display: block;
+    max-width: 125px;
+    margin: 0 auto;
+}
+
+/* Form Content */
+.loginContent {
+    padding: 30px;
+    background:bisque;
+}
+
+/* Header */
+.loginHeader {
+    margin-bottom: 15px;
+    text-align: center;
+    color: #333333;
+    font-size: large;
+    font-weight: 600;
+}
+
+/* Input Fields */
+.loginInput {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #dddddd;
+    background: rgb(255, 254, 253);
+    outline: none;
+    transition: border-color 0.5s;
+}
+
+.loginInput:focus {
+    border-color: #009578;
+}
+
+.loginInput::placeholder {
+    color: #aaaaaa;
+}
+
+/* Submit Button */
+.loginButton {
+    padding: 10px;
+    color: #ffffff;
+    font-weight: bold;
+    background: #008695;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.loginButton:hover{
+background: #7dd2db;
+}
+
+.loginButton:active {
+    background: #008067;
+}
+
+/* Links Section */
+.loginLinks {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.loginLink {
+    font-size: 0.9em;
+    color: #008067;
+    text-decoration: none;
+}
+
+/* Error Message Styling */
+.errorContainer {
+    display: flex;
+    justify-content: center;  
+    align-items: center;     
+    height: 50px;             
+    margin-bottom: 10px;     
+}
+  
+.errorMsg {
+    color: red;
+    font-size: 14px;           
+    text-align: center;      
+}
