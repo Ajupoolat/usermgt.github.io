@@ -19,13 +19,14 @@
 .closeBtn{
     color: red;
     position: absolute;
-    top: 55px;
-    right: 270px;
+    top: 34px;
+    right: 317px;
     background: white;
     border: inherit;
     font-size: 20px;
     font-weight: 900;
 }
+
 .formHeader h2 {
     color: #333;
     font-size: 24px;

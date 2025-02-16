@@ -1,0 +1,95 @@
+.profilePage {
+    padding: 2rem;
+    font-family: 'Arial', sans-serif;
+    background-color:#008695;
+    min-height: 100vh;
+  }
+  
+  .profileContainer {
+    max-width: 600px;
+    margin: 0 auto;
+    background:bisque;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profilePictureContainer {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .profilePicture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #008695;
+  }
+  
+  .fileInput {
+    margin-top: 1rem;
+  }
+  
+  .formGroup {
+    margin-bottom: 1.5rem;
+  }
+  
+  .formGroup label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  .formGroup input {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .editButton,
+  .saveButton,
+  .cancelButton {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .editButton {
+    background-color: #008695;
+    color: #fff;
+  }
+  
+  .editButton:hover {
+    background-color: #006a7a;
+  }
+  
+  .saveButton {
+    background-color: #28a745;
+    color: #fff;
+    margin-right: 1rem;
+  }
+  
+  .saveButton:hover {
+    background-color: #218838;
+  }
+  
+  .cancelButton {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+  .cancelButton:hover {
+    background-color: #c82333;
+  }
+  
+  .email {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }

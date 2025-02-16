@@ -14,6 +14,7 @@ import Admin from "./components/AdminPages/adminLogin/admin";
 import Admindashhboard from "./components/AdminPages/dashboard/admindashhboard";
 import AddUserForm from "./components/forms/adduser";
 import Editform from "./components/forms/editforms/editform";
+import Profile from "./components/userPages/profile/Profile";
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
            <Route path="/signup" element={!istoken?<Signup/>:<Navigate to='/'/>} />
            <Route path='/adminLogin'element={!isadmin?<Admin/>:<Navigate to='/dashboard'/>}/>
            <Route path="/dashboard" element={!isadmin?<Navigate to='/adminLogin'/>:<Admindashhboard/>}/>
+           <Route path='/profile'  element={!istoken?<Navigate to='/login'/>:<Profile/>}/>
           
         </Routes>
       </Router>

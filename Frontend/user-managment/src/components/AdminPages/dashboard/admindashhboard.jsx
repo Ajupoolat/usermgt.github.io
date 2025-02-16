@@ -10,10 +10,12 @@ function Admindashhboard() {
 
   const dispatch=useDispatch();
   const{userlist,loading,error,update,newuser,searchdata}=useSelector((state)=>state.userdata)
+  const{edited}=useSelector((state)=>state.auth)
   const [showform,setshowform]=useState(false)
   const [edit,setedit]=useState(false)
   const [query,setquery]=useState('')
   const logoutAdmin=()=>{
+
 
     localStorage.removeItem('tokenAdmin')
     window.location.href='/adminLogin'
@@ -26,7 +28,7 @@ function Admindashhboard() {
   useEffect(()=>{
 
     dispatch(userData())
-  },[dispatch,update,newuser])
+  },[dispatch,update,newuser,edited])
   console.log(searchdata)
 
   const handledelete=(userId)=>{

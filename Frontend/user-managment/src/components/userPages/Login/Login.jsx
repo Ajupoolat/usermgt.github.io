@@ -1,4 +1,4 @@
-import React ,{useState} from 'react'
+import React ,{useState, useEffect} from 'react'
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector,useDispatch } from 'react-redux';
 import { login } from '../../ReduxFeatures/auth/authslce';
@@ -14,6 +14,7 @@ function Login() {
   const navigate=useNavigate()
   const dispatch = useDispatch();
   const {loading,error}=useSelector((state)=>state.auth)
+  const [nev,setnev]=useState(false)
 
   const handlesubmition= async(e)=>{
 
@@ -21,14 +22,27 @@ function Login() {
 
     const result= await dispatch(login({email,password}));
 console.log(password)
-    if(result.payload){
-      navigate('/')
-    }
+
+if(result.payload){
+  setnev(!nev)
+}
+    
+useEffect(()=>{
+    
+       if(nev){
+        setTimeout(()=>{
+        navigate('/')
+        },2000)
+       }
+     },[nev,navigate])
+   
+      
   }
+   
+      
 
   return (
-
-         <section>
+<div className={styles.parent}>
 <div className={styles.loginForm}>
       <form
         className={styles.loginContent} 
@@ -37,7 +51,6 @@ console.log(password)
         <div className={styles.logoContainer}></div>
         <div>
           <div className={styles.loginHeader}>Login to your account</div>
-          {error&&(<p style={{color:'red'}}>{error}</p>)}
           <input
             className={styles.loginInput}
             type="text"
@@ -60,17 +73,19 @@ console.log(password)
           <button className={styles.loginButton} type="submit" disabled={loading}>
           {loading ? "Logging in..." : "Login"}
           </button>
+          {error&&<p style={{color:'red',marginLeft:'100px'}}>{error}</p>}
           <div className={styles.loginLinks}>
             <span>Don't have an account?</span>
-            <Link to='/signup'>
-            <a className={styles.loginLink} >
-              Register Now
-            </a></Link>
+            <Link to='/signup'  className={styles.loginLink}>
+           
+              
+           Register Now</Link>
           </div>
         </div>
         </form>
     </div>
-    </section>
+</div>
+
     
   )
 

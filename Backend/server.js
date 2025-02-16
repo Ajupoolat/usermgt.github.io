@@ -5,6 +5,7 @@ const connnectDB=require('./DB/connectDB')
 const routes=require('./routes/useroutes')
 const bodyparser=require('body-parser')
 const adminroutes=require('./routes/admin')
+const path = require('path');
 //creating the application 
 
 const app = express()
@@ -15,6 +16,8 @@ const app = express()
 app.use(cors({
     origin:'http://localhost:5173'
 }));
+// Serve static files from the 'uploads' directory
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(bodyparser.json())
 app.use('/api/data',routes)
 app.use('/api/admindata',adminroutes)

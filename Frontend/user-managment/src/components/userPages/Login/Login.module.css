@@ -1,6 +1,7 @@
-section{
+.parent{
     background-color: #008695;
     height: 100vh;
+
 }
 
 /* General Login Form Styling */

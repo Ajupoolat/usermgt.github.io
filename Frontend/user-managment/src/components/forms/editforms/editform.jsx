@@ -8,30 +8,69 @@ function Editform({setedit,user}) {
     const [password, setPassword] = useState(''); // Optional: Only update if changed
     const dispatch = useDispatch();
     const {loading,error}=useSelector((state)=>state. userdata)
+    const [erroremail,seterroremail]=useState('')
+    const [passworderror, seterrorPassword] = useState(''); 
+
+    const[errorof,seterror]=useState('')
   
     const handleSubmit = (e) => {
+
+
       e.preventDefault();
+
+
+      const stringemail=toString(email)
+
+      if(stringemail.trim()===''||password.trim()===''){
+
+         return seterror('require all feilds')
+      }else{
+        seterror('')
+      }
+
       
+      
+      const emalvalidation=(email)=>{
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email)
+
+      }
+      console.log(stringemail)
+      if(!emalvalidation(email)){
+
+      return  seterroremail('Please enter a valid email address (e.g., example@domain.com).')
+      }else{
+
+        seterroremail('')
+      }
+       
+      if(password.length<6){
+       return  seterrorPassword('Password must be at least 6 characters long.')
+      }else{
+        seterrorPassword('')
+      }
+     
+        
       const updatedData = { email };
       if (password) updatedData.password = password; // Include password only if changed
+      
+
+      
   
       dispatch(editUser({userId:user._id,updatedData }));
+      setedit()
       console.log(user._id)
     };
-    useEffect(()=>{
-  if(!loading && !error){
-    setedit(null)
-  }
+ 
       
-    },[loading,error,setedit])
-    console.log(loading)
+  
   return (
 
 
     <div className={styles.container}>
     <h2 className={styles.title}>Edit User</h2>
     <h1 className={styles.close} onClick={() => setedit(null)}>X</h1>
-    <form className={styles.form} onSubmit={handleSubmit}>
+    <form className={styles.form} onSubmit={handleSubmit} noValidate>
       <div className={styles.inputGroup}>
         <label className={styles.label} htmlFor="email">Email</label>
         <input
@@ -42,7 +81,10 @@ function Editform({setedit,user}) {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
+      {erroremail&&<p style={{color:'red'}}>{erroremail}</p>}
+
       </div>
+
 
       <div className={styles.inputGroup}>
         <label className={styles.label} htmlFor="password">Password (Optional)</label>
@@ -54,10 +96,14 @@ function Editform({setedit,user}) {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+              {passworderror&&<p style={{color:"red"}}>{passworderror}</p>}
+
       </div>
 
+
       <button type="submit" className={styles.button} >update</button>
-      {error && <p style={{color:'red'}}>{error}</p>}
+        
+        {errorof&&<p style={{color:'red'}}>{errorof}</p>}
 
     </form>
   </div>
